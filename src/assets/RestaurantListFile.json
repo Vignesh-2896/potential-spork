@@ -1,0 +1,58 @@
+{
+  "allRestaurants": [
+    {
+      "restaurantName": "Burger Mania",
+      "restaurantDescription": "From the outside it looks rustic, pleasant and snug. Hardwooden planks and stone pillars make up most of the building's outer structure.\nIt's difficult to see through the darkened windows, but the passionate voices from within can be felt outside.",
+      "restaurantCategory": "[\"Baked\",\"Hot Dish\"]",
+      "restaurantCuisine": "[\"Fast Food\",\"American Food\",\"Dessert\"]",
+      "restaurantImage": "https://wallpapercave.com/wp/wp1874157.jpg",
+      "isOpen": true,
+      "id": 2
+    },
+    {
+      "restaurantName": "Posh Pizza Hut",
+      "restaurantDescription": "It's as alluring inside as it is on the outside. Sqaured, stone beams support the upper floor and the torches attached to them. The walls are decorated with sports memorabilia, it's clear the owner, and probably the customers, are avid fans..",
+      "restaurantCategory": "[\"Baked\",\"Sweet\",\"Fast Food\"]",
+      "restaurantCuisine": "[\"American Food\",\"Pizza\",\"Dessert\",\"Breakfast\"]",
+      "restaurantImage": "https://wallpapercave.com/wp/wp2038161.jpg",
+      "isOpen": true,
+      "id": 3
+    },
+    {
+      "restaurantName": "Cheesy Grilly",
+      "restaurantDescription": "It's as dull inside as it is on the outside. Sqaured, stone beams support the upper floor and the sconces attached to them. The walls are decorated with mounted animal heads and small animals, though most have become worn and broken, given the place an even creapier feel.",
+      "restaurantCategory": "[\"Hot Dish\"]",
+      "restaurantCuisine": "[\"Fast Food\",\"Dessert\"]",
+      "restaurantImage": "https://wallpapercave.com/wp/wp2038163.jpg",
+      "isOpen": false,
+      "id": 4
+    },
+    {
+      "restaurantName": "Indian Curries",
+      "restaurantDescription": "The tavern itself is almost completely abanonded. The few people inside are silent and they keep to themselves, but whoever they are, it's about the clearest sign you can get, telling you you don't belong.",
+      "restaurantCategory": "[\"Salads\"]",
+      "restaurantCuisine": "[\"Asian\",\"Dessert\",\"Breakfast\"]",
+      "restaurantImage": "https://wallpapercave.com/wp/wp2038164.jpg",
+      "isOpen": true,
+      "id": 5
+    },
+    {
+      "restaurantName": "Moonlit Dining",
+      "restaurantDescription": "Locals seem to be the primary clientele here, which could be seen as a bad sign, though you're sure it's not. Several long tables are occupied by, what seems to be one large group of people.",
+      "restaurantCategory": "[]",
+      "restaurantCuisine": "[\"American Food\",\"Pizza\",\"Dessert\",\"Breakfast\",\"Mexican\"]",
+      "restaurantImage": "https://wallpapercave.com/wp/wp2038167.jpg",
+      "isOpen": false,
+      "id": 6
+    },
+    {
+      "restaurantName": "Ted's Classic Pub Food",
+      "restaurantDescription": "Both of the owners are law-abiding citizens with no hidden secrets or notable personality quirks. Before owning the tavern, one of the owners was born into poverty but saved up enough money to buy into a tavern, while the other served as a soldier in service to the nation. The inspiration for the tavern's name was an inside joke.",
+      "restaurantCategory": "[\"Hot Dish\",\"Fast Food\",\"Salad\"]",
+      "restaurantCuisine": "[\"Breakfast\"]",
+      "restaurantImage": "https://wallpapercave.com/wp/wp1874162.jpg",
+      "isOpen": true,
+      "id": 7
+    }
+  ]
+}

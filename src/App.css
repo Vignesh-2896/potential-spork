@@ -1,0 +1,80 @@
+.restaurant-item {
+  height:auto;
+  width:400px;
+  display:inline-block;
+  margin:5px;
+  padding:5px;
+  vertical-align: top;
+}
+
+.restaurant-item-image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.restaurant-item-image img {
+  border-radius: 10px;
+  width:360px;
+  height: 225px;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+.restaurant-item-name {
+  display: inline;
+}
+
+.restaurant-item-status {
+  background-color: aliceblue;
+  display: inline;
+  float: right;
+  margin: 0px;
+}
+
+.restaurant-item-details {
+  width:90%;
+  margin:5px auto 5px auto;
+}
+
+a {
+  color: black;
+}
+
+.restaurantPage-info {
+  display:inline-block;
+  width: 40%;
+  margin:5px;
+  padding:5px;
+  vertical-align: top;
+}
+
+.restaurantPage-image {
+  display:inline-block;
+  width: 40%;
+  margin:5px;
+  padding:5px;
+  vertical-align: top;
+}
+
+.restaurantPage-image img {
+  width:90%;
+  border-radius: 10px;
+}
+
+.restaurantPage {
+  margin:10px;
+}
+
+.categoryItem, .cuisineItem, .availableItem {
+  width:auto;
+  height:30px;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: aliceblue;
+  margin: 5px;
+}
+
+.active {
+  background-color: orange;
+}

@@ -1,1 +1,1 @@
-# React Application to find Restaurants based on user's tastes.
+# A Food Ordering application built on React.
