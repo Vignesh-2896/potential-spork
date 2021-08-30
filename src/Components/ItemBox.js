@@ -23,4 +23,20 @@ function RestaurantItem(props){
     );
 }
 
-export { RestaurantItem }
+function MenuItem(props){
+
+    return (
+        <div key = {props.itemData.id}  className = "menu-item">
+            <div className = "menu-item-image">
+                <img alt = "menu-pic" src = {props.itemData.itemImage} />
+            </div>
+            <div className = "menu-item-details">
+                <h3 className = "menu-item-name">{props.itemData.itemName}</h3>
+                <h3 className = "menu-item-cost">{props.itemData.itemCost}</h3>
+            </div>
+        </div>
+    );
+}
+
+
+export { RestaurantItem, MenuItem }

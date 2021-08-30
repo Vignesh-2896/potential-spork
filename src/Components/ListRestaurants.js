@@ -1,6 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react';
-import { RestaurantItem } from './RestaurantItem';
+import { RestaurantItem } from './ItemBox';
 import { Link } from 'react-router-dom';
+import { FilterMenu, ShowFilter, CloseFilter } from './FilterMenu';
+import FilterIcon from "../assets/icons8-filter-48.png"
 
 function ListRestaurants(){
 
@@ -12,7 +14,7 @@ function ListRestaurants(){
     const [filterCategory, setFilterCategory] = useState([])
     const [filterCuisine, setFilterCuisine] = useState([]);
 
-    const availablity = ["Open","Clear"];
+    let sortWithOpen = false;
 
     let apiData = useRef("")
 
@@ -44,8 +46,12 @@ function ListRestaurants(){
                 if(categoryList.indexOf(arrItem) === -1 ) categoryList.push(arrItem);
             });
         })
-        categoryList.push("Clear")
+        categoryList.push("Clear All")
         setCategory(categoryList);
+
+        let clearElement = document.getElementsByClassName("categoryItem")[6]
+        clearElement.classList.add("filterItem");
+        clearElement.classList.remove("categoryItem");
     }
 
     let updateCuisineListData = () => {
@@ -57,83 +63,93 @@ function ListRestaurants(){
                 if(cuisineList.indexOf(arrItem) === -1 ) cuisineList.push(arrItem);
             });
         })
-        cuisineList.push("Clear")
         setCuisine(cuisineList);
     }
+   
+    let addFilters = (e) => {
+        let selectedItem = e.target;
 
+        switch(selectedItem.className){
 
-    let filterWithCategory = (e) => {
+            case "cuisineItem":
+                let tmpFilterCuisine = filterCuisine;
+                tmpFilterCuisine.push(selectedItem.innerHTML)
+                setFilterCuisine(tmpFilterCuisine);
 
-        let requiredCategory = e.target.innerHTML
-        let tmpRestList = []
+                selectedItem.className += " active"
+                selectedItem.disabled = true;
+                break;
 
-        if(requiredCategory!== "Clear"){
-            let tmpFilterCategory = filterCategory;
-            tmpFilterCategory.push(requiredCategory)
-            setFilterCategory(tmpFilterCategory);
+            case "sortItem":
+                sortWithOpen = true;
+                selectedItem.className += " active"
+                selectedItem.disabled = true;
+                break;
 
-            e.target.className += " active"
-            document.getElementsByClassName("categoryItem")[6].disabled = false;
+            case "categoryItem":
+                let tmpFilterCategory = filterCategory;
+                tmpFilterCategory.push(selectedItem.innerHTML)
+                setFilterCategory(tmpFilterCategory);
+    
+                selectedItem.className += " active"
+                selectedItem.disabled = true;
 
-            apiData.current.forEach(function(item){
-                JSON.parse(item.restaurantCategory).flat().forEach(function(arrItem){
-                    if(filterCategory.indexOf(arrItem) !== -1  && tmpRestList.indexOf(item) === -1) tmpRestList.push(item);
-                })
-            })
-        } else {
-            setFilterCategory([])
-            tmpRestList = apiData.current;
+                applyFilters();
+                break;
 
-            let elementList =  document.getElementsByClassName("categoryItem");
-            for(let item of elementList)    item.classList.remove("active")
-
+           default:
+                if(selectedItem.innerHTML === "Clear All") clearFilters();
+                else applyFilters();
+                break;
         }
-        updateRestaurantListData(tmpRestList)
     }
 
-    let filterWithCuisine = (e) => {
 
-        let requiredCuisine = e.target.innerHTML
-        let tmpRestList = []
+    let applyFilters = () => {
+        
+        CloseFilter();
 
-        if(requiredCuisine!== "Clear"){
-            let tmpFilterCuisine = filterCuisine;
-            tmpFilterCuisine.push(requiredCuisine)
-            setFilterCuisine(tmpFilterCuisine);
+        let resData = apiData.current
+        if(filterCuisine.length >= 1) resData = applySpecificFilter(resData,"restaurantCuisine",filterCuisine)
+        if(filterCategory.length >= 1) resData = applySpecificFilter(resData,"restaurantCategory",filterCategory)
+        if(sortWithOpen) resData = applySpecificFilter(resData,"isOpen",sortWithOpen)
 
-            e.target.className += " active"
+        updateRestaurantListData(resData);
+    }
 
-            apiData.current.forEach(function(item){
-                JSON.parse(item.restaurantCuisine).flat().forEach(function(arrItem){
-                    if(filterCuisine.indexOf(arrItem) !== -1 && tmpRestList.indexOf(item) === -1) tmpRestList.push(item);
+    let applySpecificFilter = (resData, key, requiredValues) => {
+        let tempRestList = []
+        resData.forEach(function(item){
+            let data = item[key]
+            if(key === "restaurantCuisine" || key === "restaurantCategory") data = JSON.parse(data).flat();
+            if(key === "isOpen"){
+                if(data === true) tempRestList.push(item);
+            } else {
+                data.forEach(function(arrItem){
+                    if(requiredValues.indexOf(arrItem) !== -1 && tempRestList.indexOf(item) === -1) tempRestList.push(item);
                 })
-            })
-        } else {
-            setFilterCategory([])
-            tmpRestList = apiData.current;
+            }
+        })
+        return tempRestList;
+    }
 
-            let elementList =  document.getElementsByClassName("cuisineItem");
-            for(let item of elementList)    item.classList.remove("active")
+    let clearFilters = () => {
+        let tmpRestList = apiData.current;
 
-        }
-        updateRestaurantListData(tmpRestList)
-    }    
+        setFilterCuisine([]);
+        setFilterCategory([]);
+        sortWithOpen =  false;
 
-    let filterWithAvailablity = (e) => {
-        let requiredAvailablity = e.target.innerHTML
-        let tmpRestList = []
+        let elementList =  document.getElementsByClassName("categoryItem");
+        for(let item of elementList)    item.classList.remove("active")
 
-        if(requiredAvailablity!== "Clear"){
-            e.target.className += " active"
-            apiData.current.forEach(function(item){
-                if(item.isOpen === true)    tmpRestList.push(item);
-            })
-        } else {
-            tmpRestList = apiData.current;
-            let elementList =  document.getElementsByClassName("availableItem");
-            for(let item of elementList)    item.classList.remove("active")
-        }
-        updateRestaurantListData(tmpRestList)
+        elementList =  document.getElementsByClassName("sortItem");
+        for(let item of elementList)    item.classList.remove("active")
+
+        elementList =  document.getElementsByClassName("cuisineItem");
+        for(let item of elementList)    item.classList.remove("active")
+
+        updateRestaurantListData(tmpRestList);
     }
 
     let fetchData = async() => {
@@ -143,30 +159,24 @@ function ListRestaurants(){
     }
 
     return (
-        <div>
-            <div className = "list-category">
-                <h2>Categories</h2>
-                {category.map(function(item,index){
-                    return <button key = {index} onClick = {filterWithCategory} className = "categoryItem">{item}</button>
-                })}
-            </div>
-            <div className = "list-cuisine">
-                <h2>Cuisines</h2>
-                {cuisine.map(function(item,index){
-                    return <button key = {index} onClick = {filterWithCuisine} className = "cuisineItem">{item}</button>
-                })}
-            </div>
-            <div className = "list-availablity">
-                <h2>Availablity</h2>
-                {availablity.map(function(item,index){
-                    return <button key = {index} onClick = {filterWithAvailablity} className = "availableItem">{item}</button>
-                })}
-            </div>
-            <div className = "list-restaurants">
-                <h2>Restaurants</h2>
-                {restaurantList.map(function(item,index){
-                    return item;
-                })}
+        <div className = "homepage">
+            <div className = "filterSection">
+                <span className = "filterMenuBtn" onClick = {ShowFilter} ><img alt = "FilterIcon" src={FilterIcon}/></span>
+                <FilterMenu cuisineData = {cuisine} btnFunction = {addFilters} />           
+            </div> 
+            <div className = "listSection">
+                <div className = "list-category">
+                    <h2>Categories</h2>
+                    {category.map(function(item,index){
+                        return <button key = {index} onClick = {addFilters} className = "categoryItem">{item}</button>
+                    })}
+                </div>
+                <div className = "list-restaurants">
+                    <h2>Restaurants</h2>
+                    {restaurantList.map(function(item,index){
+                        return item;
+                    })}
+                </div>
             </div>
         </div>
     );
