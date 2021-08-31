@@ -25,11 +25,13 @@ let FilterMenu = (props) => {
 let ShowFilter = () => {
     document.getElementsByClassName("FilterMenu")[0].style.width = "250px";
     document.getElementsByClassName("listSection")[0].style.filter = "blur(5px)";
+    document.getElementById("filterMenuBtn").style.display = "none";
 }
 
 let CloseFilter = () => {
     document.getElementsByClassName("FilterMenu")[0].style.width = "0px";
     document.getElementsByClassName("listSection")[0].style.filter = "blur(0px)";
+    document.getElementById("filterMenuBtn").style.display = "block";
 }
 
 export {FilterMenu, ShowFilter, CloseFilter}

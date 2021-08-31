@@ -29,11 +29,23 @@
   display: inline;
 }
 
-.restaurant-item-status, .menu-item-cost {
-  background-color: aliceblue;
+.restaurant-item-status-open, .menu-item-cost, .restaurant-item-status-closed {
   display: inline;
   float: right;
   margin: 0px;
+  padding:2px;  
+}
+
+.restaurant-item-status-open {
+  background-color: lightskyblue;
+}
+
+.restaurant-item-status-closed {
+  background-color:lightsalmon;
+}
+
+.menu-item-cost {
+  color:lightsalmon
 }
 
 .restaurant-item-details, .menu-item-details {
@@ -59,6 +71,8 @@ a {
   margin:5px;
   padding:5px;
   vertical-align: top;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .restaurantPage-image img {
@@ -72,11 +86,15 @@ a {
 
 .categoryItem, .cuisineItem, .filterItem, .sortItem {
   width:auto;
-  height:30px;
+  height:40px;
   border-radius: 5px;
   font-size: 18px;
   background-color: aliceblue;
   margin: 5px;
+}
+
+.categoryItem:hover , .cuisineItem:hover , .filterItem:hover, .sortItem:hover {
+  background-color: orange;
 }
 
 .active {
@@ -90,7 +108,6 @@ a {
   height: 100%;
   width: 0%;
   overflow-x: hidden;
-  background-color:orange;
   z-index: 1;
   transition: 0.8s;
 }
@@ -102,7 +119,6 @@ a {
   height: 100%;
   width: 0%;
   overflow-x: hidden;
-  background-color:orange;
   z-index: 1;
   transition: 0.8s;
   text-align: center;
@@ -116,13 +132,30 @@ a {
   display: block;
   font-size:22px;
   transition: 0.5s;
-  background-color: yellow;
   border-radius: 10px;
-  height: 30px;
+  height: 50px;
+  line-height: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.SideMenu li:hover {
+  background-color: orange;
 }
 
 .SideMenu ul {
   padding:5px;
+}
+
+.sideMenuBtn {
+  height: 40px;
+  width: 40px;
+}
+
+.sideMenuBtn img {
+  margin-top: -80px;
 }
 
 .closeBtn {
@@ -131,9 +164,13 @@ a {
   margin-left: 30px;
 }
 
+.closeBtn:hover {
+  background-color: white !important;
+}
+
 .filterMenuBtn {
   float:right;
-  margin-top:-80px;
+  margin-top:-50px;
   height: 40px;
   width: 40px;
 }
@@ -145,4 +182,33 @@ a {
 
 button:disabled {
   color:black;
+}
+
+.loaderDiv svg {
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 200px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.list-category {
+  text-align: center;
+}
+
+.list-restaurants {
+  text-align: center;
+}
+
+.restaurant-item-details {
+  text-align: left;
+}
+
+.restaurantPage-about {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }

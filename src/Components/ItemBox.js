@@ -4,9 +4,9 @@ function RestaurantItem(props){
 
     let restaurantStatus = ""
     if(props.itemData.isOpen){
-        restaurantStatus = "Open Now"
+        restaurantStatus = <h3 className = "restaurant-item-status-open">Open Now</h3>
     } else {
-        restaurantStatus = "Closed"
+        restaurantStatus = <h3 className = "restaurant-item-status-closed">Closed</h3>
     }
 
     return (
@@ -16,7 +16,7 @@ function RestaurantItem(props){
             </div>
             <div className = "restaurant-item-details">
                 <h3 className = "restaurant-item-name">{props.itemData.restaurantName}</h3>
-                <h3 className = "restaurant-item-status">{restaurantStatus}</h3>
+                {restaurantStatus}
                 <p className = "restaurant-item-description">{props.itemData.restaurantDescription}</p>
             </div>
         </div>
@@ -37,6 +37,5 @@ function MenuItem(props){
         </div>
     );
 }
-
 
 export { RestaurantItem, MenuItem }

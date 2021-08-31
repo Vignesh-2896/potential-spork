@@ -1,10 +1,13 @@
 import React, {useState, useEffect, useRef} from 'react';
-import { RestaurantItem } from './ItemBox';
+import { RestaurantItem} from './ItemBox';
 import { Link } from 'react-router-dom';
 import { FilterMenu, ShowFilter, CloseFilter } from './FilterMenu';
+import { SideMenu, ShowMenu } from './SideMenu';
 import FilterIcon from "../assets/icons8-filter-48.png"
+import HamburgerIcon from "../assets/icons8-menu-48.png"
+import Loader from 'react-loader-spinner';
 
-function ListRestaurants(){
+function Homepage(){
 
     const [restaurantList, setRestaurantList] = useState([]);
 
@@ -13,18 +16,38 @@ function ListRestaurants(){
 
     const [filterCategory, setFilterCategory] = useState([])
     const [filterCuisine, setFilterCuisine] = useState([]);
+    const [isLoading,setIsLoading] = useState(true)
 
     let sortWithOpen = false;
 
     let apiData = useRef("")
 
     useEffect(() => {
+
         (async () => {
             let response = await fetchData()
             apiData.current = response.allRestaurants;
+
             updateRestaurantListData(apiData.current);
             updateCategoryListData();
             updateCuisineListData();
+
+            setIsLoading(false);
+            
+            let element = document.getElementsByClassName("categoryItem");
+            if(element[6]){
+                element[6].classList.add("filterItem");
+                element[6].classList.remove("categoryItem")
+            }
+
+            document.getElementById("sideMenuBtn").addEventListener("click",() => {
+                ShowMenu();
+            })
+
+            document.getElementById("filterMenuBtn").addEventListener("click",() => {
+                ShowFilter();
+            })
+
         })()
 
     },[])
@@ -48,10 +71,6 @@ function ListRestaurants(){
         })
         categoryList.push("Clear All")
         setCategory(categoryList);
-
-        let clearElement = document.getElementsByClassName("categoryItem")[6]
-        clearElement.classList.add("filterItem");
-        clearElement.classList.remove("categoryItem");
     }
 
     let updateCuisineListData = () => {
@@ -159,28 +178,38 @@ function ListRestaurants(){
     }
 
     return (
-        <div className = "homepage">
-            <div className = "filterSection">
-                <span className = "filterMenuBtn" onClick = {ShowFilter} ><img alt = "FilterIcon" src={FilterIcon}/></span>
-                <FilterMenu cuisineData = {cuisine} btnFunction = {addFilters} />           
-            </div> 
-            <div className = "listSection">
-                <div className = "list-category">
-                    <h2>Categories</h2>
-                    {category.map(function(item,index){
-                        return <button key = {index} onClick = {addFilters} className = "categoryItem">{item}</button>
-                    })}
-                </div>
-                <div className = "list-restaurants">
-                    <h2>Restaurants</h2>
-                    {restaurantList.map(function(item,index){
-                        return item;
-                    })}
+        <div>
+            {isLoading
+            ? (<div className = "loaderDiv"><Loader type="TailSpin" color="#00BFFF" height={120} width={120}/></div>)
+            : (
+            <div className = "homepage">
+                <div className = "filterSection">
+                    <span id = "sideMenuBtn" className = "sideMenuBtn"><img alt = "HamburgerIcon" src={HamburgerIcon}/></span>
+                    <SideMenu />
+                    <span id = "filterMenuBtn" className = "filterMenuBtn"><img alt = "FilterIcon" src={FilterIcon}/></span>
+                    <FilterMenu cuisineData = {cuisine} btnFunction = {addFilters} />           
+                </div> 
+                <div className = "listSection">
+                    <h1 style = {{textAlign:"center",marginTop:"-40px"}} >Food for Thoughts</h1>
+                    <h3 style = {{textAlign:"center"}} >Find the food you are thinking about now !</h3>
+                    <div className = "list-category">
+                        <h2>Categories</h2>
+                        {category.map(function(item,index){
+                            return <button key = {index} onClick = {addFilters} className = "categoryItem">{item}</button>
+                        })}
+                    </div>
+                    <div className = "list-restaurants">
+                        <h2>Restaurants</h2>
+                        {restaurantList.map(function(item,index){
+                            return item;
+                        })}
+                    </div>
                 </div>
             </div>
+            )}
         </div>
-    );
+    )
 
 }
 
-export {ListRestaurants};
+export {Homepage};
