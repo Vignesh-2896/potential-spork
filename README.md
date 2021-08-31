@@ -14,12 +14,18 @@ There are 3 available filters.
 3. Open for Business
 
 The filters for cuisine and open for business are present in the filter menu that can be navigated using the filter icon on the top right corner.
-
 Once you have selected your choices in the filter menu, you can click on Apply Filters to re-render the page with restaurants based on your choice.
-
 You can apply all three filters at the same time.
-
 In case there isn't an available restaurant, you will be duly informed about the same by application.
+
+## Restaurant Page
+The Restaurant Page will look for a parameter with which it can fetch details of a particular restaurant.
+Using a dummy json file created by me, dishes will be fetched which belong to our required restaurant.
+Category filter is available, which will then display the dishes of that particular category under our required restaurant.
+The Side Menu can be used to navigated back to the home page.
+
+## Design
+Responsive design elements have been included so that the website can be viewed on a phone.
 
 ## Routing
 A Simple Routing is present in between the home page and the restaurant page.
