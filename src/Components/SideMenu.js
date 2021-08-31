@@ -6,7 +6,7 @@ import HelpIcon from "../assets/icons8-help-24.png"
 import SettingsIcon from "../assets/icons8-settings-24.png"
 import { Link } from 'react-router-dom';
 
-let SideMenu = () => {
+let SideMenu = () => {  // Side Menu for the application.
 
     return (
         <div>
@@ -25,19 +25,17 @@ let SideMenu = () => {
 
 }
 
-let ShowMenu = () => {
+let ShowMenu = () => {  // Function to display the menu on click of the Hamburger Icon.
     document.getElementsByClassName("SideMenu")[0].style.width = "350px";
     if(document.getElementsByClassName("listSection")[0]) document.getElementsByClassName("listSection")[0].style.filter = "blur(5px)";
-    if(document.getElementsByClassName("restaurantPage-about")[0]) document.getElementsByClassName("restaurantPage-about")[0].style.filter = "blur(5px)";
-    if(document.getElementsByClassName("restaurantPage-menu")[0]) document.getElementsByClassName("restaurantPage-menu")[0].style.filter = "blur(5px)";
+    if(document.getElementsByClassName("restaurantPage")[0]) document.getElementsByClassName("restaurantPage")[0].style.filter = "blur(5px)";
     document.getElementById("sideMenuBtn").style.display = "none";
 }
 
-let CloseMenu = () => {
+let CloseMenu = () => { // Function to hide the menu on click of the Close Icon.
     document.getElementsByClassName("SideMenu")[0].style.width = "0px";
     if(document.getElementsByClassName("listSection")[0]) document.getElementsByClassName("listSection")[0].style.filter = "blur(0px)";
-    if(document.getElementsByClassName("restaurantPage-about")[0]) document.getElementsByClassName("restaurantPage-about")[0].style.filter = "blur(0px)";
-    if(document.getElementsByClassName("restaurantPage-menu")[0]) document.getElementsByClassName("restaurantPage-menu")[0].style.filter = "blur(0px)";
+    if(document.getElementsByClassName("restaurantPage")[0]) document.getElementsByClassName("restaurantPage")[0].style.filter = "blur(0px)";
     document.getElementById("sideMenuBtn").style.display = "block";
 }
 

@@ -170,7 +170,7 @@ a {
 
 .filterMenuBtn {
   float:right;
-  margin-top:-50px;
+  margin-top:-70px;
   height: 40px;
   width: 40px;
 }
@@ -211,4 +211,71 @@ h2 {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+.applicationName {
+  text-align: center;
+  margin-top: -40px;
+}
+
+.applicationDescription {
+  text-align: center;
+}
+
+.restaurant-error {
+  text-align: center;
+}
+
+.restaurant-error a {
+  color:coral;
+}
+
+@media only screen and (max-width: 900px) {
+  .restaurantPage-about {
+    display: grid;
+  }
+
+  .restaurantPage-info {
+    order:2;
+    display: block;
+    width: 90%;
+  }
+
+  .restaurantPage-image {
+    order: 1;
+    width: 95%;
+  }
+
+  .restaurantPage-menu h3 {
+    text-align: center;
+  }
+
+  .menu-item, .restaurant-item  {
+    padding: 0px;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .menu-item-image img, .restaurant-item-image img {
+    width: 90%;
+  }
+
+  .menu-item-details {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .applicationName {
+    margin-top: 20px;
+  }
+
+  .restaurantPage-info-summary {
+    text-align: justify;
+  }
+  
+  .filterMenuBtn {
+    margin-top: -50px;
+  }
+
 }

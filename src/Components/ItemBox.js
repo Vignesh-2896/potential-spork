@@ -1,6 +1,6 @@
 import React from 'react';
 
-function RestaurantItem(props){
+function RestaurantItem(props){ // A Reusable Element that will display a box with information about a Restaurant.
 
     let restaurantStatus = ""
     if(props.itemData.isOpen){
@@ -23,7 +23,7 @@ function RestaurantItem(props){
     );
 }
 
-function MenuItem(props){
+function MenuItem(props){ // A Reusable Element that will display a box with information about a Dish.
 
     return (
         <div key = {props.itemData.id}  className = "menu-item">
