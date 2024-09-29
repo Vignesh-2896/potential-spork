@@ -1,58 +1,58 @@
 {
-    "restaurantDetails": [
-      {
-        "restaurantName": "Burger Mania",
-        "restaurantDescription": "From the outside it looks rustic, pleasant and snug. Hardwooden planks and stone pillars make up most of the building's outer structure.\nIt's difficult to see through the darkened windows, but the passionate voices from within can be felt outside.",
-        "restaurantImage": "https://wallpapercave.com/wp/wp1874157.jpg",
-        "openingHours": "Mon - Thu: 10:30AM - 11:00 PM, Fri - Sat: 10:30 AM - 06:00 PM",
-        "contactNumber": "+447987654344",
-        "websiteUrl": "http://www.burgermania.com",
-        "id": 2
-      },
-      {
-        "restaurantName": "Posh Pizza Hut",
-        "restaurantDescription": "It's as alluring inside as it is on the outside. Sqaured, stone beams support the upper floor and the torches attached to them. The walls are decorated with sports memorabilia, it's clear the owner, and probably the customers, are avid fans..",
-        "restaurantImage": "https://wallpapercave.com/wp/wp2038161.jpg",
-        "openingHours": "Mon - Thu: 1:30PM - 11:00 PM, Fri - Sat: 9:30 AM - 06:00 PM",
-        "contactNumber": "+447987644322",
-        "websiteUrl": "http://www.poshboipizza.co.uk",
-        "id": 3
-      },
-      {
-        "restaurantName": "Cheesy Grilly",
-        "restaurantDescription": "It's as dull inside as it is on the outside. Sqaured, stone beams support the upper floor and the sconces attached to them. The walls are decorated with mounted animal heads and small animals, though most have become worn and broken, given the place an even creapier feel.",
-        "restaurantImage": "https://wallpapercave.com/wp/wp2038163.jpg",
-        "openingHours": "Mon - Thu: 11:45AM - 11:00 PM, Fri - Sun: 10:30 AM - 06:00 PM",
-        "contactNumber": "+447967654323",
-        "websiteUrl": "http://www.cheesygrilly.com",
-        "id": 4
-      },
-      {
-        "restaurantName": "Indian Curries",
-        "restaurantDescription": "The tavern itself is almost completely abanonded. The few people inside are silent and they keep to themselves, but whoever they are, it's about the clearest sign you can get, telling you you don't belong.",
-        "restaurantImage": "https://wallpapercave.com/wp/wp2038164.jpg",
-        "openingHours": "Mon - Thu: 10:30AM - 10:00 PM, Fri - Sun: 07:30 AM - 09:00 PM",
-        "contactNumber": "+447987652224",
-        "websiteUrl": "http://www.indiancurries.com",
-        "id": 5
-      },
-      {
-        "restaurantName": "Moonlit Dining",
-        "restaurantDescription": "Locals seem to be the primary clientele here, which could be seen as a bad sign, though you're sure it's not. Several long tables are occupied by, what seems to be one large group of people.",
-        "restaurantImage": "https://wallpapercave.com/wp/wp2038167.jpg",
-        "openingHours": "Mon - Thu: 07:30AM - 11:00 PM, Fri - Sat: 06:30 AM - 06:00 PM",
-        "contactNumber": "+447947654325",
-        "websiteUrl": "http://www.moonlitdining.co",
-        "id": 6
-      },
-      {
-        "restaurantName": "Ted's Classic Pub Food",
-        "restaurantDescription": "Both of the owners are law-abiding citizens with no hidden secrets or notable personality quirks. Before owning the tavern, one of the owners was born into poverty but saved up enough money to buy into a tavern, while the other served as a soldier in service to the nation. The inspiration for the tavern's name was an inside joke.",
-        "restaurantImage": "https://wallpapercave.com/wp/wp1874162.jpg",
-        "openingHours": "Mon - Thu: 11:30AM - 07:00 PM, Fri - Sun: 03:30 AM - 09:00 PM",
-        "contactNumber": "+447987664526",
-        "websiteUrl": "http://www.tedspub.io",
-        "id": 7
-      }
-    ]
-  }
+  "restaurantDetails": [
+    {
+      "restaurantName": "Burger Mania",
+      "restaurantDescription": "From the outside it looks rustic, pleasant and snug. Hardwooden planks and stone pillars make up most of the building's outer structure.\nIt's difficult to see through the darkened windows, but the passionate voices from within can be felt outside.",
+      "restaurantImage": "https://wallpapercave.com/wp/wp1874157.jpg",
+      "openingHours": "Mon - Thu: 10:30AM - 11:00 PM, Fri - Sat: 10:30 AM - 06:00 PM",
+      "contactNumber": "+447987654344",
+      "websiteUrl": "http://www.burgermania.com",
+      "id": 2
+    },
+    {
+      "restaurantName": "Posh Pizza Hut",
+      "restaurantDescription": "It's as alluring inside as it is on the outside. Sqaured, stone beams support the upper floor and the torches attached to them. The walls are decorated with sports memorabilia, it's clear the owner, and probably the customers, are avid fans..",
+      "restaurantImage": "https://wallpapercave.com/wp/wp2038161.jpg",
+      "openingHours": "Mon - Thu: 1:30PM - 11:00 PM, Fri - Sat: 9:30 AM - 06:00 PM",
+      "contactNumber": "+447987644322",
+      "websiteUrl": "http://www.poshboipizza.co.uk",
+      "id": 3
+    },
+    {
+      "restaurantName": "Cheesy Grilly",
+      "restaurantDescription": "It's as dull inside as it is on the outside. Sqaured, stone beams support the upper floor and the sconces attached to them. The walls are decorated with mounted animal heads and small animals, though most have become worn and broken, given the place an even creapier feel.",
+      "restaurantImage": "https://wallpapercave.com/wp/wp2038163.jpg",
+      "openingHours": "Mon - Thu: 11:45AM - 11:00 PM, Fri - Sun: 10:30 AM - 06:00 PM",
+      "contactNumber": "+447967654323",
+      "websiteUrl": "http://www.cheesygrilly.com",
+      "id": 4
+    },
+    {
+      "restaurantName": "Indian Curries",
+      "restaurantDescription": "The tavern itself is almost completely abanonded. The few people inside are silent and they keep to themselves, but whoever they are, it's about the clearest sign you can get, telling you you don't belong.",
+      "restaurantImage": "https://wallpapercave.com/wp/wp2038164.jpg",
+      "openingHours": "Mon - Thu: 10:30AM - 10:00 PM, Fri - Sun: 07:30 AM - 09:00 PM",
+      "contactNumber": "+447987652224",
+      "websiteUrl": "http://www.indiancurries.com",
+      "id": 5
+    },
+    {
+      "restaurantName": "Moonlit Dining",
+      "restaurantDescription": "Locals seem to be the primary clientele here, which could be seen as a bad sign, though you're sure it's not. Several long tables are occupied by, what seems to be one large group of people.",
+      "restaurantImage": "https://wallpapercave.com/wp/wp2038167.jpg",
+      "openingHours": "Mon - Thu: 07:30AM - 11:00 PM, Fri - Sat: 06:30 AM - 06:00 PM",
+      "contactNumber": "+447947654325",
+      "websiteUrl": "http://www.moonlitdining.co",
+      "id": 6
+    },
+    {
+      "restaurantName": "Ted's Classic Pub Food",
+      "restaurantDescription": "Both of the owners are law-abiding citizens with no hidden secrets or notable personality quirks. Before owning the tavern, one of the owners was born into poverty but saved up enough money to buy into a tavern, while the other served as a soldier in service to the nation. The inspiration for the tavern's name was an inside joke.",
+      "restaurantImage": "https://wallpapercave.com/wp/wp1874162.jpg",
+      "openingHours": "Mon - Thu: 11:30AM - 07:00 PM, Fri - Sun: 03:30 AM - 09:00 PM",
+      "contactNumber": "+447987664526",
+      "websiteUrl": "http://www.tedspub.io",
+      "id": 7
+    }
+  ]
+}

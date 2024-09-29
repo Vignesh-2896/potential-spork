@@ -2,38 +2,44 @@
   margin-top: 50px;
 }
 
-.restaurant-item, .menu-item {
-  height:auto;
-  width:400px;
-  display:inline-block;
-  margin:5px;
-  padding:5px;
+.restaurant-item,
+.menu-item {
+  height: auto;
+  width: 400px;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
   vertical-align: top;
 }
 
-.restaurant-item-image, .menu-item-image {
+.restaurant-item-image,
+.menu-item-image {
   margin-left: auto;
   margin-right: auto;
 }
 
-.restaurant-item-image img,.menu-item-image img {
+.restaurant-item-image img,
+.menu-item-image img {
   border-radius: 10px;
-  width:360px;
+  width: 360px;
   height: 225px;
-  margin-left:auto;
-  margin-right:auto;
-  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
-.restaurant-item-name, .menu-item-name {
+.restaurant-item-name,
+.menu-item-name {
   display: inline;
 }
 
-.restaurant-item-status-open, .menu-item-cost, .restaurant-item-status-closed {
+.restaurant-item-status-open,
+.menu-item-cost,
+.restaurant-item-status-closed {
   display: inline;
   float: right;
   margin: 0px;
-  padding:2px;  
+  padding: 2px;
 }
 
 .restaurant-item-status-open {
@@ -41,59 +47,67 @@
 }
 
 .restaurant-item-status-closed {
-  background-color:lightsalmon;
+  background-color: lightsalmon;
 }
 
 .menu-item-cost {
-  color:lightsalmon
+  color: lightsalmon;
 }
 
-.restaurant-item-details, .menu-item-details {
-  width:90%;
-  margin:5px auto 5px auto;
+.restaurant-item-details,
+.menu-item-details {
+  width: 90%;
+  margin: 5px auto 5px auto;
 }
 
 a {
   color: black;
+  text-decoration: none;
 }
 
 .restaurantPage-info {
-  display:inline-block;
+  display: inline-block;
   width: 40%;
-  margin:5px;
-  padding:5px;
+  margin: 5px;
+  padding: 5px;
   vertical-align: top;
 }
 
 .restaurantPage-image {
-  display:inline-block;
+  display: inline-block;
   width: 40%;
-  margin:5px;
-  padding:5px;
+  margin: 5px;
+  padding: 5px;
   vertical-align: top;
   margin-left: auto;
   margin-right: auto;
 }
 
 .restaurantPage-image img {
-  width:90%;
+  width: 90%;
   border-radius: 10px;
 }
 
 .restaurantPage {
-  margin:10px;
+  margin: 10px;
 }
 
-.categoryItem, .cuisineItem, .filterItem, .sortItem {
-  width:auto;
-  height:40px;
+.categoryItem,
+.cuisineItem,
+.filterItem,
+.sortItem {
+  width: auto;
+  height: 40px;
   border-radius: 5px;
   font-size: 18px;
   background-color: aliceblue;
   margin: 5px;
 }
 
-.categoryItem:hover , .cuisineItem:hover , .filterItem:hover, .sortItem:hover {
+.categoryItem:hover,
+.cuisineItem:hover,
+.filterItem:hover,
+.sortItem:hover {
   background-color: orange;
 }
 
@@ -103,8 +117,8 @@ a {
 
 .SideMenu {
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 0%;
   overflow-x: hidden;
@@ -114,8 +128,8 @@ a {
 
 .FilterMenu {
   position: fixed;
-  top:0;
-  right:0;
+  top: 0;
+  right: 0;
   height: 100%;
   width: 0%;
   overflow-x: hidden;
@@ -124,21 +138,16 @@ a {
   text-align: center;
 }
 
-
 .SideMenu li {
   list-style-type: none;
-  margin:10px;
-  padding:5px;
+  margin: 10px;
+  padding: 5px;
   display: block;
-  font-size:22px;
+  font-size: 22px;
   transition: 0.5s;
   border-radius: 10px;
   height: 50px;
   line-height: 50px;
-}
-
-a {
-  text-decoration: none;
 }
 
 .SideMenu li:hover {
@@ -146,7 +155,7 @@ a {
 }
 
 .SideMenu ul {
-  padding:5px;
+  padding: 5px;
 }
 
 .sideMenuBtn {
@@ -160,7 +169,7 @@ a {
 
 .closeBtn {
   position: absolute;
-  right:25px;
+  right: 25px;
   margin-left: 30px;
 }
 
@@ -169,8 +178,8 @@ a {
 }
 
 .filterMenuBtn {
-  float:right;
-  margin-top:-70px;
+  float: right;
+  margin-top: -70px;
   height: 40px;
   width: 40px;
 }
@@ -181,13 +190,13 @@ a {
 }
 
 button:disabled {
-  color:black;
+  color: black;
 }
 
 .loaderDiv svg {
   display: block;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 200px;
 }
 
@@ -213,7 +222,6 @@ h2 {
   margin-right: auto;
 }
 
-
 .applicationName {
   text-align: center;
   margin-top: -40px;
@@ -228,7 +236,7 @@ h2 {
 }
 
 .restaurant-error a {
-  color:coral;
+  color: coral;
 }
 
 @media only screen and (max-width: 900px) {
@@ -237,7 +245,7 @@ h2 {
   }
 
   .restaurantPage-info {
-    order:2;
+    order: 2;
     display: block;
     width: 90%;
   }
@@ -251,13 +259,15 @@ h2 {
     text-align: center;
   }
 
-  .menu-item, .restaurant-item  {
+  .menu-item,
+  .restaurant-item {
     padding: 0px;
     width: 90%;
     margin-bottom: 10px;
   }
 
-  .menu-item-image img, .restaurant-item-image img {
+  .menu-item-image img,
+  .restaurant-item-image img {
     width: 90%;
   }
 
@@ -273,9 +283,8 @@ h2 {
   .restaurantPage-info-summary {
     text-align: justify;
   }
-  
+
   .filterMenuBtn {
     margin-top: -50px;
   }
-
 }
