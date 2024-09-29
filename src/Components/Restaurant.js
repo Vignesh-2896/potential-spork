@@ -7,7 +7,7 @@ import HamburgerIcon from "../assets/icons8-menu-48.png";
 import TimeIcon from "../assets/icons8-time-24.png";
 import CallIcon from "../assets/icons8-call-24.png";
 import WebsiteIcon from "../assets/icons8-website-24.png";
-import Loader from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 
 const Restaurant = () => {
@@ -108,16 +108,17 @@ const Restaurant = () => {
   return (
     <div>
       {isError ? (
-        <h3 class="restaurant-error">
+        <h3 className="restaurant-error">
           No Restaurant Found ! Way back home is <Link to="/">Here !</Link>{" "}
         </h3>
       ) : (
         <div>
           {isLoading ? ( // If Fetch has not been complete, a Loading animation will be displayed.
             <div className="loaderDiv">
-              <Loader
-                type="TailSpin"
-                color="#00BFFF"
+              <InfinitySpin
+                visible={true}
+                color="#4fa94d"
+                ariaLabel="infinity-spin-loading"
                 height={120}
                 width={120}
               />

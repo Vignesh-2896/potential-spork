@@ -6,7 +6,7 @@ import HelpIcon from "../assets/icons8-help-24.png";
 import SettingsIcon from "../assets/icons8-settings-24.png";
 import { Link } from "react-router-dom";
 
-let SideMenu = () => {
+const SideMenu = () => {
   // Side Menu for the application.
 
   return (
@@ -23,6 +23,7 @@ let SideMenu = () => {
                 alt="Home Icon"
                 style={{ marginRight: "15px" }}
               />
+              {''}
               Home
             </Link>
           </li>
@@ -32,6 +33,7 @@ let SideMenu = () => {
               alt="Order Icon"
               style={{ marginRight: "15px" }}
             />
+            {''}
             Orders
           </li>
           <li>
@@ -40,6 +42,7 @@ let SideMenu = () => {
               alt="Notification Icon"
               style={{ marginRight: "15px" }}
             />
+            {''}
             Notification
           </li>
           <li>
@@ -48,6 +51,7 @@ let SideMenu = () => {
               alt="Help Icon"
               style={{ marginRight: "15px" }}
             />
+            {''}
             Help & Support
           </li>
           <li>
@@ -56,6 +60,7 @@ let SideMenu = () => {
               alt="Settings Icon"
               style={{ marginRight: "15px" }}
             />
+            {''}
             Settings
           </li>
         </ul>
@@ -64,7 +69,7 @@ let SideMenu = () => {
   );
 };
 
-let ShowMenu = () => {
+const ShowMenu = () => {
   // Function to display the menu on click of the Hamburger Icon.
   document.getElementsByClassName("SideMenu")[0].style.width = "350px";
   if (document.getElementsByClassName("listSection")[0])

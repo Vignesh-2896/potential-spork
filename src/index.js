@@ -1,11 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.css";
-import Routes from "./Routes";
+import AppRoutes from "./Routes";
+import { createRoot } from "react-dom/client";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Routes />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+let domNode = document.getElementById("root");
+let rootElement = createRoot(domNode);
+rootElement.render(<AppRoutes />);

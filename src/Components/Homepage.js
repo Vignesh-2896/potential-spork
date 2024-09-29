@@ -5,7 +5,7 @@ import { FilterMenu, ShowFilter, CloseFilter } from "./FilterMenu";
 import { SideMenu, ShowMenu } from "./SideMenu";
 import FilterIcon from "../assets/icons8-filter-48.png";
 import HamburgerIcon from "../assets/icons8-menu-48.png";
-import Loader from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 function Homepage() {
   const [restaurantList, setRestaurantList] = useState([]); // State to hold the list of restaraunts to be displayed.
@@ -93,7 +93,8 @@ function Homepage() {
     let selectedItem = e.target;
 
     switch (selectedItem.className) {
-      case "cuisineItem": // Filter on Cuisines.
+      case "cuisineItem": {
+        // Filter on Cuisines.
         let tmpFilterCuisine = filterCuisine;
         tmpFilterCuisine.push(selectedItem.innerHTML);
         setFilterCuisine(tmpFilterCuisine);
@@ -101,14 +102,15 @@ function Homepage() {
         selectedItem.className += " active";
         selectedItem.disabled = true;
         break;
-
+      }
       case "sortItem": // Filter on Sort with Open filter.
         sortWithOpen = true;
         selectedItem.className += " active";
         selectedItem.disabled = true;
         break;
 
-      case "categoryItem": // Filter on Categories.
+      case "categoryItem": {
+        // Filter on Categories.
         let tmpFilterCategory = filterCategory;
         tmpFilterCategory.push(selectedItem.innerHTML);
         setFilterCategory(tmpFilterCategory);
@@ -118,7 +120,7 @@ function Homepage() {
 
         applyFilters();
         break;
-
+      }
       default: // Apply or Clear Filters
         if (selectedItem.innerHTML === "Clear All") clearFilters();
         else applyFilters();
@@ -205,7 +207,13 @@ function Homepage() {
     <div>
       {isLoading ? ( // If Fetch has not been complete, a Loading animation will be displayed.
         <div className="loaderDiv">
-          <Loader type="TailSpin" color="#00BFFF" height={120} width={120} />
+          <InfinitySpin
+            visibile={true}
+            color="#4fa94d"
+            ariaLabel="infinity-spin-loading"
+            height={120}
+            width={120}
+          />
         </div>
       ) : (
         // If Fetch has been completed, the required content will be displayed.

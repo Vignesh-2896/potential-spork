@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-let FilterMenu = (props) => {
+const FilterMenu = (props) => {
   // Menu to show the filters available for choosing restaurants.
 
   return (
@@ -39,21 +40,23 @@ let FilterMenu = (props) => {
   );
 };
 
-let ShowFilter = () => {
+const ShowFilter = () => {
   // Function to display the filter on click of the Filter Icon.
   document.getElementsByClassName("FilterMenu")[0].style.width = "250px";
   document.getElementsByClassName("listSection")[0].style.filter = "blur(5px)";
   document.getElementById("filterMenuBtn").style.display = "none";
 };
 
-let CloseFilter = () => {
+const CloseFilter = () => {
   // Function to hide the filter on click of the Close Icon.
   document.getElementsByClassName("FilterMenu")[0].style.width = "0px";
   document.getElementsByClassName("listSection")[0].style.filter = "blur(0px)";
   document.getElementById("filterMenuBtn").style.display = "block";
-  //document.getElementById("filterMenuBtn").addEventListener("click",() => {
-  //    ShowFilter()
-  //});
 };
+
+FilterMenu.propTypes = {
+  cuisineData: PropTypes.object,
+  btnFunction: PropTypes.func
+}
 
 export { FilterMenu, ShowFilter, CloseFilter };

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function RestaurantItem(props) {
   // A Reusable Element that will display a box with information about a Restaurant.
@@ -46,6 +47,14 @@ function MenuItem(props) {
       </div>
     </div>
   );
+}
+
+RestaurantItem.propTypes = {
+  itemData: PropTypes.object
+}
+
+MenuItem.propTypes = {
+  itemData: PropTypes.object
 }
 
 export { RestaurantItem, MenuItem };
