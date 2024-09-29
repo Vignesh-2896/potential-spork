@@ -25,7 +25,7 @@ const Restaurant = () => {
     (async () => {
       let requiredRestaurant;
       RestaurantDetails.restaurantDetails.forEach((item) => {
-        if (item.id == resID) {
+        if (item.id === resID) {
           requiredRestaurant = item;
         }
       });

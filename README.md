@@ -31,6 +31,3 @@ Responsive design elements have been included so that the website can be viewed 
 A Simple Routing is present in between the home page and the restaurant page.
 A Restaurant ID will be passed from Home Page to the Restaurant Page.
 If no ID is passed React will move you to a standing page with a link back to the home page.
-
-
-[Live Demo](https://potential-spork.vigneshb7.repl.co)
