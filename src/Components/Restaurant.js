@@ -9,6 +9,7 @@ import CallIcon from "../assets/icons8-call-24.png";
 import WebsiteIcon from "../assets/icons8-website-24.png";
 import { InfinitySpin } from "react-loader-spinner";
 import { Link } from "react-router-dom";
+import RestaurantDetails from "../assets/RestaurantDetails.json";
 
 const Restaurant = () => {
   let resID = useParams().restarauntId;
@@ -22,13 +23,14 @@ const Restaurant = () => {
 
   useEffect(() => {
     (async () => {
-      let response = await fetch(
-        "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/restaurantDetails/" +
-          resID
-      );
-      response = await response.json(); // Find the restaurant's data based on the ID passed.
-      if (!response.errors) {
-        setRestaurantData(response.restaurantDetail);
+      let requiredRestaurant;
+      RestaurantDetails.restaurantDetails.forEach((item) => {
+        if (item.id == resID) {
+          requiredRestaurant = item;
+        }
+      });
+      if (requiredRestaurant) {
+        setRestaurantData(requiredRestaurant);
         updateRestaurantCategory(Dishes.restaurantDishes);
         updateAllowedDishes(Dishes.restaurantDishes);
 

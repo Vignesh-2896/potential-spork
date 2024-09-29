@@ -109,6 +109,7 @@ a {
 .filterItem:hover,
 .sortItem:hover {
   background-color: orange;
+  cursor: pointer;
 }
 
 .active {

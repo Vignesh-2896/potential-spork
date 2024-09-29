@@ -6,6 +6,7 @@ import { SideMenu, ShowMenu } from "./SideMenu";
 import FilterIcon from "../assets/icons8-filter-48.png";
 import HamburgerIcon from "../assets/icons8-menu-48.png";
 import { InfinitySpin } from "react-loader-spinner";
+import RestaurantDetailsJSON from "../assets/RestaurantListFile.json";
 
 function Homepage() {
   const [restaurantList, setRestaurantList] = useState([]); // State to hold the list of restaraunts to be displayed.
@@ -24,8 +25,7 @@ function Homepage() {
   useEffect(() => {
     (async () => {
       // Async funtion to fetch API Data and populate the required states.
-      let response = await fetchData();
-      apiData.current = response.allRestaurants; // Variable to hold the complete API Data
+      apiData.current = RestaurantDetailsJSON.allRestaurants; // Variable to hold the complete API Data
 
       updateRestaurantListData(apiData.current);
       updateCategoryListData();
@@ -193,14 +193,6 @@ function Homepage() {
     for (let item of elementList) item.classList.remove("active");
 
     updateRestaurantListData(tmpRestList);
-  };
-
-  let fetchData = async () => {
-    let response = await fetch(
-      "https://api.sheety.co/bdcbafbc1f4197dda178b9e69f6ccee9/techAlchemyWebTest1/allRestaurants"
-    );
-    response = await response.json();
-    return response;
   };
 
   return (
